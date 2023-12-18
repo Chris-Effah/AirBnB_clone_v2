@@ -1,19 +1,28 @@
 #!/usr/bin/python3
+"""Starts a Flask web application"""
 
 from flask import Flask
-"""a flask module that starts the flask web app"""
 
 app = Flask(__name__)
 
 
-# Route to display "Hello HBNB!"
 @app.route('/', strict_slashes=False)
 def hello_hbnb():
     """
-    a function that displays hello hbnb
+    Displays "Hello HBNB!" when the root URL is accessed.
+
+    Returns:
+           A given string
     """
-    return 'Hello HBNB!'
+    return "Hello HBNB!"
 
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+if __name__ == "__main__":
+    """
+    Runs the Flask application on 0.0.0.0:5000.
+
+    Debug mode is disabled.
+
+    To test the application, open a web browser and go to http://0.0.0.0:5000/
+    """
+    app.run(host="0.0.0.0", port=5000, debug=None)
